@@ -9,6 +9,13 @@ on:
       provider:
         required: true
         type: string
+      optional_param:
+        required: false
+        type: string
+      other_optional_param:
+        required: false
+        type: string
+
 
 jobs:
   print:
@@ -22,3 +29,6 @@ jobs:
       - name: Print Netlify
         if: ${{ inputs.provider == 'netlify' }}
         run: echo "Provider is Netlify"
+      - name: Optional Print
+        if: ${{ inputs.optional_param || inputs.other_optional_param }}
+        run: echo "Optional Print"
