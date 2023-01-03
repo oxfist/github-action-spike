@@ -17,8 +17,8 @@ jobs:
       - name: Print message
         run: echo "${{ inputs.message }}"
       - name: Print Vercel
-        if: ${{ inputs.provider }} == 'vercel'
+        if: ${{ inputs.provider == 'vercel' }}
         run: echo "Provider is Vercel"
       - name: Print Netlify
-        if: ${{ inputs.provider }} == 'netlify'
+        if: ${{ inputs.provider == 'netlify' }}
         run: echo "Provider is Netlify"
