@@ -1,6 +1,11 @@
 name: Print message
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
 
 jobs:
   print:
